@@ -12,7 +12,7 @@ public class operator {
 		System.out.println(5^6);  //按位异或
 		System.out.println(6<<2); //左移
 		System.out.println(12>>2);//右移
-		System.out.println(15>8?15:8); //条件运算符
+		System.out.println(15 > 8 ? 15 : 8); //条件运算符
 	}
 
 }

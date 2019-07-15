@@ -21,6 +21,7 @@ public class bank {
 		System.out.println("存取三年后的本息是：" + benxi_3y);
 		double benxi_5y = benjin + benjin * 0.036 * 5;
 		System.out.println("存取五年后的本息是：" + benxi_5y);
+		input.close();
 	}
 
 }

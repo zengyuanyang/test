@@ -20,6 +20,7 @@ public class wage {
 		System.out.println("物价津贴为：" + wujia);
 		System.out.println("房租津贴为：" + fangzu);
 		System.out.println("员工薪水是：" + sum);
+		input.close();
 	}
 
 }
