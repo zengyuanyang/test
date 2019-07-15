@@ -45,6 +45,7 @@ public class day {
 			}
 		}while(true);
 		System.out.println("³ÌĞò½áÊø£¡");
+		input.close();
 	}
 
 }

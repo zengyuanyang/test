@@ -31,6 +31,7 @@ public class airplane {
 			}
 		}
 		System.out.println("您的机票价格为：" + price);
+		input.close();
 	}
 
 }

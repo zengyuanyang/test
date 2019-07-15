@@ -29,6 +29,7 @@ public class max_min {
 			}
 		}while(true);
 		System.out.println("最大值是：" + max + " 最小值是：" + min);
+		input.close();
 	}
 
 }
