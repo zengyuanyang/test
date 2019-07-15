@@ -23,6 +23,7 @@ public class Lucky {
 		}else {
 			System.out.println("会员卡号"+custNo+"的会员，您没有中奖");
 		}
+		input.close();
 	}
 
 }
