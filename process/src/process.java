@@ -122,6 +122,7 @@ public class process {
 			}
 		}
 		System.out.println("ÊäÈë½áÊø¡£");
+		input.close();
 	}
 
 }
