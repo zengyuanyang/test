@@ -23,7 +23,7 @@ public class InvertedSequenceOutput {
 			System.out.printf(str[i]);
 		}
 		input.close();*/
-		String[] str = new String[5];
+		/*String[] str = new String[5];
         Scanner sca = new Scanner(System.in);
         str[4] = sca.nextLine();
         str[3] = sca.nextLine();
@@ -32,7 +32,12 @@ public class InvertedSequenceOutput {
         str[0] = sca.nextLine();
         for(int i = 0;i<str.length;i++){
             System.out.println(str[i]);
-        }
+        }*/
+		for(int i = 16;i <= 51;i++) {
+			System.out.println("#id" + i + "{\r\n" + 
+					"	background-color;\r\n" + 
+					"}");
+		}
 	}
 
 }
