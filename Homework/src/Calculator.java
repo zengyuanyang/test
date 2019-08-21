@@ -27,16 +27,16 @@ public class Calculator {
 			System.out.println("请正确输入计算方式！");
 		}
 	}
-	public static double add(double a,double b) {
+	public static double add(double a,double b) {	//加法
 		return a + b;
 	}
-	public static double substraction(double a,double b) {
+	public static double substraction(double a,double b) {	//减法
 		return a - b;
 	}
-	public static double multiplication(double a,double b) {
+	public static double multiplication(double a,double b) {	 //乘法
 		return a * b;
 	}
-	public static double division(double a,double b) {
+	public static double division(double a,double b) { 	//除法
 		return a / b;
 	}
 }
