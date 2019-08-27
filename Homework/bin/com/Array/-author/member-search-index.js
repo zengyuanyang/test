@@ -1,0 +1,1 @@
+memberSearchIndex = [{"l":"arrayIndex(int[], int)","h":"","u":""},{"l":"arrayMax(int[])","h":"","u":""},{"l":"arrayMin(int[])","h":"","u":""},{"l":"arrayReversedOrder(int[])","h":"","u":""},{"l":"arrayTraversal(int[])","h":"","u":""}]
