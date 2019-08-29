@@ -1,4 +1,9 @@
 import java.io.IOException;
+/**
+ * 
+ * @author ÔøÔ¶Ñó
+ *
+ */
 public class m
 {
 	public static void main(String[] args)
