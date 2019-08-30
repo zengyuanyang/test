@@ -84,7 +84,7 @@ public class Show{//定义类show
 		
 		for(;;){
 			User loginUser=tool.login();
-			if(loginUser.getUserName().equals(registerUser.getUserName())&&loginUser.getUserPwd().equals(registerUser.getUserPwd())){
+			if(loginUser.getName().equals(registerUser.getName())&&loginUser.getUserPwd().equals(registerUser.getUserPwd())){
 				System.out.println("登陆成功");
 				break;
 			}else{
