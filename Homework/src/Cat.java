@@ -12,7 +12,7 @@ public class Cat extends AnimalDoor{
 	public Cat(String name,int age,String color) {	//有参构造方法
 		super(name,age,color);	//调用父类的有参构造方法
 	}
-	public void play() {
+	public void play() {	
 		System.out.println("猫喜欢玩！");
 	}
 	public void eat() {
