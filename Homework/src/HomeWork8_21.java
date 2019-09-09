@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 /**
  * 
- * @author ÔøÔ¶Ñó
- * @version 8ÔÂ21ÈÕ×÷Òµ
+ * @author ï¿½ï¿½Ô¶ï¿½ï¿½
+ * @version 8ï¿½ï¿½21ï¿½ï¿½ï¿½ï¿½Òµ
  */
 public class HomeWork8_21 {
 
@@ -11,103 +11,103 @@ public class HomeWork8_21 {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		/*
-		System.out.println("ÇëÊäÈëÒ»¸öË÷ÒýÖµ£º");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
 		int i = sc.nextInt();
-		day(i);	//µ÷ÓÃ·½·¨day
+		day(i);	//ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½day
 		*/		
 		/*
-		System.out.println("ÇëÊäÈëÒ»¸öÊý£º");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		int j = sc.nextInt();
-		search(j);	//µ÷ÓÃsearch·½·¨
+		search(j);	//ï¿½ï¿½ï¿½ï¿½searchï¿½ï¿½ï¿½ï¿½
         */		
 		/*
-		maxmin();	//µ÷ÓÃmaxmin·½·¨
+		maxmin();	//ï¿½ï¿½ï¿½ï¿½maxminï¿½ï¿½ï¿½ï¿½
         */	
 		/*
-		reversed_order();	//µ÷ÓÃreversed_order·½·¨
+		reversed_order();	//ï¿½ï¿½ï¿½ï¿½reversed_orderï¿½ï¿½ï¿½ï¿½
         */
 		/*
-		sum_array();	//µ÷ÓÃsum_array·½·¨
+		sum_array();	//ï¿½ï¿½ï¿½ï¿½sum_arrayï¿½ï¿½ï¿½ï¿½
         */	
 		/*
-		System.out.println("ÇëÊäÈëÑî»ÔÈý½ÇµÄÐÐÊý£º");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		int h = sc.nextInt();
-		pascal_triangle(h);	//µ÷ÓÃPascal_triangle·½·¨
+		pascal_triangle(h);	//ï¿½ï¿½ï¿½ï¿½Pascal_triangleï¿½ï¿½ï¿½ï¿½
         */	
 		
-		System.out.println("ÇëÊäÈëÒ»´®Ð¡ÓÚ°ËÎ»ÊýµÄÊý¾Ý£º");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ð¡ï¿½Ú°ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½");
 		int mima = sc.nextInt();
-		encryption(mima);	//µ÷ÓÃencryption·½·¨
+		encryption(mima);	//ï¿½ï¿½ï¿½ï¿½encryptionï¿½ï¿½ï¿½ï¿½
 		
 	}
 	
 	
 	
-	//¸ù¾ÝÊäÈëµÄË÷ÒýÖµ£¬·µ»Ø×Ö·û´®Êý×é¶ÔÓ¦µÄÔªËØ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Ôªï¿½ï¿½
 	public static void day(int i) {	
-		String[] str = {"ÐÇÆÚÌì","ÐÇÆÚÒ»","ÐÇÆÚ¶þ","ÐÇÆÚÈý","ÐÇÆÚËÄ","ÐÇÆÚÎå","ÐÇÆÚÁù"};
-		System.out.println("¶ÔÓ¦ÔªËØÎª£º" + str[i]);
+		String[] str = {"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½Ò»","ï¿½ï¿½ï¿½Ú¶ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"};
+		System.out.println("ï¿½ï¿½Ó¦Ôªï¿½ï¿½Îªï¿½ï¿½" + str[i]);
 	}
 	
 	
 	
-	//Ñ°ÕÒÖµÔÚÊý×éÖÐµÄ¶ÔÓ¦Î»×Ó
+	//Ñ°ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¶ï¿½Ó¦Î»ï¿½ï¿½
 	public static void search(int i) {	
 		int[] array = {1,3,6,12,8,6,9};
 		int count = 0;
 		for(int j = 0;j < array.length;j++) {
-			if(array[j] == i) {	//ÅÐ¶ÏÔªËØÓëÊäÈëÖµÊÇ·ñÏàµÈ
-				System.out.println("¸ÃÊýÔÚÊý×éÖÐµÄÎ»×ÓÊÇ£º" + (j+1));
+			if(array[j] == i) {	//ï¿½Ð¶ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ç·ï¿½ï¿½ï¿½ï¿½
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Î»ï¿½ï¿½ï¿½Ç£ï¿½" + (j+1));
 				count++;
 				break;
 			}
 		}
 		if(count == 0) {
-			System.out.println("Êý×éÖÐÃ»ÓÐ¸ÃÊý¾Ý£¡");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½Ý£ï¿½");
 		}
 	}
 	
 	
 	
-	//Êä³öÊý×éÖÐµÄ×î´óÖµºÍ×îÐ¡Öµ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Ð¡Öµ
 	public static void maxmin() {	
 		int[] array = {2,8,13,6,22,64,1,24};
 		int max = array[0];
 		int min = array[0];
 		for(int i = 0;i < array.length;i++) {
-			if(array[i] >= max) {	//½«ÔªËØÓëmax½øÐÐ±È½Ï£¬Èç¹û´óÓÚµÈÓÚmax£¬¾Í½«¸ÃÔªËØµÄÖµ¸³¸ømax
+			if(array[i] >= max) {	//ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½maxï¿½ï¿½ï¿½Ð±È½Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½maxï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½Ôªï¿½Øµï¿½Öµï¿½ï¿½ï¿½ï¿½max
 				max = array[i];
 			}
-			if(array[i] <= min) {	//½«ÔªËØÓëmin½øÐÐ±È½Ï£¬Èç¹ûÐ¡ÓÚµÈÓÚmin£¬¾Í½«¸ÃÔªËØµÄÖµ¸³¸ømin
+			if(array[i] <= min) {	//ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½minï¿½ï¿½ï¿½Ð±È½Ï£ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½Úµï¿½ï¿½ï¿½minï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½Ôªï¿½Øµï¿½Öµï¿½ï¿½ï¿½ï¿½min
 				min = array[i];
 			}
 		}
-		System.out.println("¸ÃÊý×é×î´óÖµÎª£º" + max + "£¬×îÐ¡ÖµÎª£º" + min);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÖµÎªï¿½ï¿½" + max + "ï¿½ï¿½ï¿½ï¿½Ð¡ÖµÎªï¿½ï¿½" + min);
 	}
 	
 	
 	
-	//½«Êý×éÄæÐòÊä³ö
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public static void reversed_order() {	
 		int[] array = {1,3,8,9,14,16,5};
-		System.out.print("Êý×éÕýÐòÊä³öÎª£º[");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½[");
 		
-		for(int i = 0;i < array.length;i++) {	//±éÀúÊä³öÕýÐòÊý×é
+		for(int i = 0;i < array.length;i++) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(i == array.length-1) {
 				System.out.print(array[i] + "]");
 			}else {
 				System.out.print(array[i] + ",");
 			}
 		}
-		for(int i = 0;i < array.length/2;i++) {	//½«Êý×éÄæÐò
+		for(int i = 0;i < array.length/2;i++) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			int j;
 			j = array[i];
 			array[i] = array[array.length-1-i];
 			array[array.length-1-i] = j;
 		}
 		System.out.print('\n');
-		System.out.print("Êý×éÄæÐòÊä³öÎª£º[");
-		for(int i = 0;i < array.length;i++) {	//±éÀúÊä³öÄæÐòµÄÊý×é
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½[");
+		for(int i = 0;i < array.length;i++) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(i == array.length-1) {
 				System.out.print(array[i] + "]");
 			}else {
@@ -118,7 +118,7 @@ public class HomeWork8_21 {
 	
 	
 	
-	//¶þÎ¬Êý×éËùÓÐÔªËØÇóºÍ
+	//ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½
 	public static void sum_array() {
 		int[][] sale = {{22,66,44},{77,33,88},{25,45,65},{11,66,99}};
 		int sum = 0;
@@ -127,15 +127,15 @@ public class HomeWork8_21 {
 				sum = sum + sale[i][j];
 			}
 		}
-		System.out.println("±¾Äê¶ÈµÄÏúÊÛ¶îÎª£º" + sum);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½ï¿½Û¶ï¿½Îªï¿½ï¿½" + sum);
 	}
 	
 	
 	
-	//Êä³öÑî»ÔÈý½Ç£¨ÐÐÊý¿É¼üÈë£©
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½ï¿½ë£©
 	public static void pascal_triangle(int i) {
 		int[][] array = new int[i][i];
-		//½«Ñî»ÔÈý½ÇµÄÊý¾ÝÂ¼Èë¶þÎ¬Êý×é
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½
 		array[0][0] = 1;
 		for(int j = 1;j < array.length;j++) {
 			array[j][0] = 1;
@@ -143,25 +143,25 @@ public class HomeWork8_21 {
 				array[j][k] = array[j-1][k] + array[j-1][k-1];
 			}
 		}
-		//Êä³öÑî»ÔÈý½Ç
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		for(int j = 0;j < array.length;j++) {
 			for(int k = 0;k < array[j].length;k++) {
-				if(array[j][k] != 0) {//ÔªËØ²»Îª0Ê±£¬Êä³öÔªËØÖµ
+				if(array[j][k] != 0) {//Ôªï¿½Ø²ï¿½Îª0Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½Öµ
 					System.out.print(array[j][k]);
 					System.out.print('\t');
 				}
 			}
-			System.out.print('\n');	//Ã¿ÐÐÊä³ö½áÊøºó»»ÐÐ
+			System.out.print('\n');	//Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		}
 	}
 	
 	
 	
-	//Êý¾Ý¼ÓÃÜ
+	//ï¿½ï¿½ï¿½Ý¼ï¿½ï¿½ï¿½
 	public static void encryption(int mima) {
 		int weishu = 0;
 		int i = 1;
-		//¼ÆËãÊý¾ÝµÄÎ»Êý
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½Î»ï¿½ï¿½
 		while(1 == 1) {
 			if(mima/i != 0) {
 				weishu++;
@@ -170,28 +170,28 @@ public class HomeWork8_21 {
 				break;
 			}
 		}
-		if(weishu >= 8) {//ÅÐ¶Ïµ±Êý¾ÝÎ»Êý´óÓÚµÈÓÚ8Î»Ê±£¬ÌáÊ¾´íÎó
-			System.out.println("Î»Êý¹ý¶à£¬ÇëÖØÐÂÊäÈë£¡");
+		if(weishu >= 8) {//ï¿½Ð¶Ïµï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½8Î»Ê±ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
+			System.out.println("Î»ï¿½ï¿½ï¿½ï¿½ï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡");
 			return;
 		}
-		System.out.println("¸ÃÊý¾ÝÎª£º" + weishu + "Î»Êý¡£");
-		int[] array = new int[weishu];	//¶¨ÒåÊý×é
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½" + weishu + "Î»ï¿½ï¿½ï¿½ï¿½");
+		int[] array = new int[weishu];	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int k = 1;
-	    //½«Êý¾ÝÄæÐò´æÈëÊý×é
+	    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		for(int j = 0;j < weishu;j++) {
 			array[j] = (mima/k)%10;
 			k *= 10;
 		}
-		//¶ÔÊý¾Ý½øÐÐ¼ÓÃÜ´¦Àí
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ý½ï¿½ï¿½Ð¼ï¿½ï¿½Ü´ï¿½ï¿½ï¿½
 		for(int j = 0;j < array.length;j++) {
 			array[j] = (array[j] + 5) % 10;
 		}
-		//Ê×Î²Êý¾Ý»¥»»
+		//ï¿½ï¿½Î²ï¿½ï¿½ï¿½Ý»ï¿½ï¿½ï¿½
 		k = array[0];
 		array[0] = array[weishu-1];	
 		array[weishu-1] = k;
-		System.out.print("¼ÓÃÜºóµÄÊý¾ÝÎª£º");
-		for(int j = 0;j < array.length;j++) {	//±éÀúÊä³ö¼ÓÃÜºóµÄÊý¾Ý
+		System.out.print("ï¿½ï¿½ï¿½Üºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
+		for(int j = 0;j < array.length;j++) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Üºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			System.out.print(array[j]);
 		}
 	}
