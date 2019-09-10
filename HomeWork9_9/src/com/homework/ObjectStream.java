@@ -48,6 +48,7 @@ public class ObjectStream {
 		}catch (Exception e) {
 			System.out.println("错误！");
 		}
+		
 	}
 
 }
