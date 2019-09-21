@@ -9,11 +9,14 @@ public class FrameDemo extends JFrame{
 
 	public FrameDemo() {
 		setTitle("Java JFrame练习");
-		setSize(400,800);
+		setSize(600,800);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		JLabel jl = new JLabel("这是窗口");
+		//JLabel jl = new JLabel("这是窗口");
 		Container c = getContentPane();
-		c.add(jl);
+		
+		//c.add(jl);
+		MenuFrame mf = new MenuFrame();
+		add(mf);
 		setVisible(true);
 	}
 

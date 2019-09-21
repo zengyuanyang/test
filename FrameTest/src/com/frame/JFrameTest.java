@@ -12,16 +12,16 @@ public class JFrameTest {
 		// TODO Auto-generated method stub
 		//new FrameDemo();
 		JFrame jf = new JFrame("JPanel");
-		jf.setBounds(200, 200, 400, 600);
+		jf.setBounds(200, 200, 600, 800);
 		JPanel jp = new JPanel();
 		JLabel jl = new JLabel("JPanel");
 		jp.setBackground(Color.RED);
 		jf.add(jp);
 		jp.add(jl);
-		jf.setVisible(true);
+		//jf.setVisible(true);
 		
-		
-		new FrameDemo2();
+		new FrameDemo();
+		//new FrameDemo2();
 	}
 
 }
