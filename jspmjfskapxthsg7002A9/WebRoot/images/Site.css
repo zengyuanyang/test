@@ -1,0 +1,72 @@
+BODY {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: ËÎÌו
+}
+.button {
+	BORDER-RIGHT: #f0f0f0 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #f0f0f0 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 9pt; BACKGROUND-IMAGE: url(../images/bg02.gif); BORDER-LEFT: #f0f0f0 1px solid; CURSOR: default; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: #f0f0f0 1px solid; HEIGHT: 22px; BACKGROUND-COLOR: #000000
+}
+TD {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 14pt; FONT-FAMILY: "ËÎÌו"
+}
+.blue {
+	FONT-SIZE: 8pt; COLOR: #006699; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+A:link {
+	FONT-SIZE: 9pt; COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 9pt; COLOR: #000000; TEXT-DECORATION: none
+}
+A:active {
+	FONT-SIZE: 9pt; COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 9pt; COLOR: #ff0000; TEXT-DECORATION: none
+}
+INPUT.face {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 9pt; BACKGROUND: #ffffff; BORDER-LEFT: #000000 1px solid; COLOR: #000000; LINE-HEIGHT: normal; BORDER-BOTTOM: #000000 1px solid; FONT-STYLE: normal; HEIGHT: 20px; FONT-VARIANT: normal
+}
+INPUT.menu {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 9pt; BACKGROUND: #d9ebf9; BORDER-LEFT: #000000 1px solid; COLOR: #000000; LINE-HEIGHT: normal; BORDER-BOTTOM: #000000 1px solid; FONT-STYLE: normal; HEIGHT: 20px; FONT-VARIANT: normal
+}
+SELECT.face {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 9pt; BACKGROUND: #ffffff; BORDER-LEFT: #000000 1px solid; COLOR: #000000; LINE-HEIGHT: normal; BORDER-BOTTOM: #000000 1px solid; FONT-STYLE: normal; HEIGHT: 20px; FONT-VARIANT: normal
+}
+TEXTAREA.face {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 9pt; BACKGROUND: #ffffff; BORDER-LEFT: #000000 1px solid; COLOR: #000000; LINE-HEIGHT: normal; BORDER-BOTTOM: #000000 1px solid; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+INPUT.menu {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 12px; BACKGROUND: #ffffff; BORDER-LEFT: #ffffff 1px solid; COLOR: #000000; LINE-HEIGHT: normal; BORDER-BOTTOM: #000000 1px solid; FONT-STYLE: normal; HEIGHT: 20px; FONT-VARIANT: normal
+}
+SELECT.menu {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 12px; BACKGROUND: #ffffff; BORDER-LEFT: #000000 1px solid; COLOR: #000000; LINE-HEIGHT: normal; BORDER-BOTTOM: #000000 1px solid; FONT-STYLE: normal; HEIGHT: 20px; FONT-VARIANT: normal
+}
+TEXTAREA.menu {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 12px; BACKGROUND: #ffffff; BORDER-LEFT: #000000 1px solid; COLOR: #000000; LINE-HEIGHT: normal; BORDER-BOTTOM: #000000 1px solid; FONT-STYLE: normal; FONT-VARIANT: normal
+}
+.booktable {
+	BACKGROUND-COLOR: #000000
+}
+.bottom {
+	BACKGROUND-COLOR: #e1f4ee
+}
+.banma1 {
+	BACKGROUND-COLOR: #d5e7f9
+}
+.banma2 {
+	BACKGROUND-COLOR: #ffffff
+}
+.banma3 {
+	BACKGROUND-COLOR: #ccf2c8
+}
+A.a1:link {
+	FONT-SIZE: 9pt; COLOR: #000000; TEXT-DECORATION: none
+}
+A.a1:visited {
+	FONT-SIZE: 9pt; COLOR: #000000; TEXT-DECORATION: none
+}
+A.a1:active {
+	FONT-SIZE: 9pt; COLOR: #000000; TEXT-DECORATION: none
+}
+A.a1:hover {
+	FONT-SIZE: 9pt; RIGHT: 0px; COLOR: #000000; POSITION: relative; TOP: 0px; TEXT-DECORATION: none
+}

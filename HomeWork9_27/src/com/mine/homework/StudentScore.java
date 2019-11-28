@@ -16,6 +16,7 @@ public class StudentScore implements Comparable<StudentScore>{
 		this.yw = yw;
 		this.sx = sx;
 		this.yy = yy;
+		this.score = yw + sx + yy;
 	}
 	public String getName() {
 		return name;

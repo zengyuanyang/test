@@ -15,9 +15,10 @@ import java.util.Scanner;
 public class FileTest {
 	static int count = 0;
 	public static void main(String[] args) {
-		File file = new File("F:\\");
+		File file = new File("F:\\培训\\笔记\\testNew\\QQ图片20191008172448.png");
 		//searchAll(file);
-		checkAll(file);
+		//checkAll(file);
+		changeName(file);
 	}
 	
 	/**
@@ -63,7 +64,35 @@ public class FileTest {
 		}
 	}
 	
-	public static void changeName() {
+	/**
+	 * 编写一个方法，用户可以修改任意文件夹下的任意文件或文件夹名
+	 * @param file
+	 */
+	public static void changeName(File file) {
 		Scanner sc = new Scanner(System.in);
+		if(file.isDirectory()) {
+			System.out.println("请输入新的文件夹名：");
+			String newName = sc.next();
+			String[] path = file.getAbsolutePath().split("\\\\");
+			String str = "";
+			for (int i = 0; i < path.length - 1; i++) {
+				str = str + path[i] + "\\";
+			}
+			str = str + newName;
+			
+			file.renameTo(new File(str));
+		}else {
+			System.out.println("请输入新的文件名：");
+			String newName = sc.next();
+			String[] path = file.getAbsolutePath().split("\\\\");
+			String str = "";
+			for (int i = 0; i < path.length - 1; i++) {
+				str = str + path[i] + "\\";
+			}
+			String[] fileName = path[path.length - 1].split("\\.");
+			str = str + newName + "." + fileName[fileName.length - 1];
+			file.renameTo(new File(str));
+		}
+		sc.close();
 	}
 }

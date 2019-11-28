@@ -8,7 +8,6 @@ import java.io.IOException;
 public class PlayGame {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		// TODO Auto-generated method stub
 		GameTools tools = new GameTools();	//创建GameTools类对象
 		tools.cls();	//调用GameTools类中的cls（）清屏方法
 		Face face = new Face();		//创建Face类对象

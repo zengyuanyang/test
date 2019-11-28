@@ -61,21 +61,23 @@ public class FileOutputStreamTest {
 			e.printStackTrace();
 		} 
 		
-		//图片
-		copyFile("F:\\我的\\生活\\照片\\1473803396_IMG_0261.JPG", "test.JPG");
-		copyFileBuffered("F:\\我的\\生活\\照片\\1473803396_IMG_0261.JPG", "test2.JPG");
-		
-		//音频
-		copyFile("F:\\我的\\工作\\团建\\2016团建\\特色支部答辩会\\新建文件夹\\群星-光荣啊,中国共青团.mp3", "test3.mp3");
-		copyFileBuffered("F:\\我的\\工作\\团建\\2016团建\\特色支部答辩会\\新建文件夹\\群星-光荣啊,中国共青团.mp3", "test4.mp3");
-		
-		//视频
-		copyFile("F:\\我的\\生活\\还念\\唱得巨难听的周大炮.mp4", "test5.mp4");
-		copyFileBuffered("F:\\我的\\生活\\还念\\唱得巨难听的周大炮.mp4", "test6.mp4");
-		
-		//电子表格
-		copyFile("C:\\Users\\Administrator\\Desktop\\2019-10-8每日作业检查情况 .xlsx", "test7.xlsx");
-		copyFileBuffered("C:\\Users\\Administrator\\Desktop\\2019-10-8每日作业检查情况 .xlsx", "test8.xlsx");
+		/*
+		 * //图片 copyFile("F:\\我的\\生活\\照片\\1473803396_IMG_0261.JPG", "test.JPG");
+		 * copyFileBuffered("F:\\我的\\生活\\照片\\1473803396_IMG_0261.JPG", "test2.JPG");
+		 * 
+		 * //音频 copyFile("F:\\我的\\工作\\团建\\2016团建\\特色支部答辩会\\新建文件夹\\群星-光荣啊,中国共青团.mp3",
+		 * "test3.mp3");
+		 * copyFileBuffered("F:\\我的\\工作\\团建\\2016团建\\特色支部答辩会\\新建文件夹\\群星-光荣啊,中国共青团.mp3",
+		 * "test4.mp3");
+		 * 
+		 * //视频 copyFile("F:\\我的\\生活\\还念\\唱得巨难听的周大炮.mp4", "test5.mp4");
+		 * copyFileBuffered("F:\\我的\\生活\\还念\\唱得巨难听的周大炮.mp4", "test6.mp4");
+		 * 
+		 * //电子表格 copyFile("C:\\Users\\Administrator\\Desktop\\2019-10-8每日作业检查情况 .xlsx",
+		 * "test7.xlsx");
+		 * copyFileBuffered("C:\\Users\\Administrator\\Desktop\\2019-10-8每日作业检查情况 .xlsx"
+		 * , "test8.xlsx");
+		 */
 	}
 	
 	/**

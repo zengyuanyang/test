@@ -1,0 +1,5 @@
+name:曾远洋,yw:100,yy:99,sx:100,Score:299
+name:刀疤哥,yw:90,yy:95,sx:91,Score:276
+name:洋洋,yw:85,yy:90,sx:93,Score:268
+name:洋娃子,yw:77,yy:88,sx:69,Score:234
+name:鸳鸯,yw:60,yy:88,sx:59,Score:207
