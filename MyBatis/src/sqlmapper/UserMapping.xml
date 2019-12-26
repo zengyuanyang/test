@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="studentNamespace">	
+
+	<!-- <resultMap type="cn.itcast.javaee.mybatis.app14.Student" id="studentMap">
+		<id property="id" column="students_id"/>
+		<result property="name" column="students_name"/>
+		<result property="sal" column="students_sal"/>
+	</resultMap>
+
+	
+	
+	
+	
+	
+	
+	sql片段对应字段名,id属性值任意
+	<sql id="key">
+		去掉最后一个,
+		<trim suffixOverrides=",">
+			<if test="id!=null">
+				students_id,
+			</if>
+			<if test="name!=null">
+				students_name,
+			</if>
+			<if test="sal!=null">
+				students_sal,
+			</if>
+		</trim>
+	</sql>
+	
+	
+	sql片段对应?,id属性值任意
+	<sql id="value">
+		去掉最后一个,
+		<trim suffixOverrides=",">
+			<if test="id!=null">
+				#{id},
+			</if>
+			<if test="name!=null">
+				#{name},
+			</if>
+			<if test="sal!=null">
+				#{sal},
+			</if>
+		</trim>
+	</sql> -->
+	
+	
+	
+	
+	
+	<!-- <include refid="key"/>和<include refid="value"/>表示引用上面定义的sql片段 -->
+	<insert id="dynaInsert" parameterType="cn.itcast.javaee.mybatis.app14.Student">
+		insert into students(<include refid="key"/>) values(<include refid="value"/>)
+	</insert>
+	
+	
+	
+</mapper>
+
+
+
+

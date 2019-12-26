@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Search Book</title>
+	<script src="/HomeWork12-24/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("input[type='text']").keyup(function(){
+				var param = $(this).val();
+				var url = "/HomeWork12-24/servlet/search.action";
+				$.ajax({
+					url:url,
+					data:{"param":param},
+					type:"post",
+					success:function(data){
+						$("#body").children().remove();
+						for(var i = 0;i < data.length;i++){
+							$("#body").append("<div class='book_div'>" +
+									"<table class='book_table' cellspacing='0px'>" +
+							"<tr>" +
+								"<td class='first_td'><img alt='书籍' class='imgs' src='"+ data[i].bookImg +"' /></td>" +
+							"</tr>" +
+							"<tr>" +
+								"<td class='second_td'>单价:"+ data[i].bookPrice +"</td>" +
+							"</tr>" +
+							"<tr>" +
+								"<td>书名:"+ data[i].bookName +"</td>" +
+							"<tr>" +
+							"</table>" +
+						"</div>");
+						}
+					},
+					error:function(){
+						alert("服务器繁忙。。。。");
+					},
+					dataType:"json",
+				});
+			});
+		});
+	</script>
+	<style>
+		.book_div{
+			display: inline-block;
+			background-color: aliceblue;
+			width: 250px
+		}
+		.book_table{
+			width: 100%;
+		}
+		.book_table tr td{
+			border:1px solid #000000;
+		}
+		.first_td{
+			height: 300px;
+		}
+		.imgs{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body style="text-align: center">
+	<div id="header" style="text-align: center;background-color: antiquewhite;width: 800px;display: inline-block;padding-top: 10px;padding-bottom: 10px">
+		<form id="search_form">
+			<input type="text" placeholder="请输入书名" name="search_input" style="height: 25px;width: 200px" />
+			<input type="submit" value="查找" name="search_button" style="height: 30px;width: 60px" />
+		</form>
+	</div>
+		
+	<div id="body" style="width: 800px;display: inline-block;background-color: antiquewhite;height: 1000px;margin-top: 10px">
+		<!-- <div class="book_div">
+			<table class="book_table" cellspacing="0px">
+			<tr>
+				<td class="first_td"><img alt="书籍" class="imgs" /></td>
+			</tr>
+			<tr>
+				<td class="second_td">价格</td>
+			</tr>
+			<tr>
+				<td>书名</td>
+			</tr>
+			</table>
+		</div> -->
+	</div>
+</body>
+</html>

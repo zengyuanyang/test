@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+   <display-name>bookManager</display-name>
+  <servlet>
+  	<servlet-name>addBook</servlet-name>
+  	<servlet-class>com.kgc.bookmanager.web.servlet.AddBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>addBook</servlet-name>
+  	<url-pattern>/products/servlet/addBook.action</url-pattern>
+  </servlet-mapping>
+  <display-name>bookManager</display-name>
+  
+  <servlet>
+  	<servlet-name>showCategory</servlet-name>
+  	<servlet-class>com.kgc.bookmanager.web.servlet.ShowCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>showCategory</servlet-name>
+  	<url-pattern>/admin/products/servlet/showCategory.action</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>showAllProducts</servlet-name>
+  	<servlet-class>com.kgc.bookmanager.web.servlet.ShowAllProducts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>showAllProducts</servlet-name>
+  	<url-pattern>/admin/products/servlet/showAllProducts.action</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>delProducts</servlet-name>
+  	<servlet-class>com.kgc.bookmanager.web.servlet.DelProducts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>delProducts</servlet-name>
+  	<url-pattern>/admin/products/delProducts.action</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>showBookObject</servlet-name>
+  	<servlet-class>com.kgc.bookmanager.web.servlet.ShowBookObject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>showBookObject</servlet-name>
+  	<url-pattern>/admin/products/servlet/showBookObject.action</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>editBook</servlet-name>
+  	<servlet-class>com.kgc.bookmanager.web.servlet.EditBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>editBook</servlet-name>
+  	<url-pattern>/admin/products/servlet/edit.action</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>showAllCategory</servlet-name>
+  	<servlet-class>com.kgc.bookmanager.web.servlet.ShowAllCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>showAllCategory</servlet-name>
+  	<url-pattern>/admin/category/servlet/showAllCategory.action</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>addCategory</servlet-name>
+  	<servlet-class>com.kgc.bookmanager.web.servlet.AddCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>addCategory</servlet-name>
+  	<url-pattern>/category/servlet/addCategory.action</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>showCategoryObject</servlet-name>
+  	<servlet-class>com.kgc.bookmanager.web.servlet.ShowCategoryObject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>showCategoryObject</servlet-name>
+  	<url-pattern>/admin/category/servlet/showCategoryObject.action</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>editCategory</servlet-name>
+  	<servlet-class>com.kgc.bookmanager.web.servlet.EditCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>editCategory</servlet-name>
+  	<url-pattern>/admin/category/servlet/editCategory.action</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>delCategory</servlet-name>
+  	<servlet-class>com.kgc.bookmanager.web.servlet.DelCategory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>delCategory</servlet-name>
+  	<url-pattern>/admin/category/delCategory.action</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>/admin/login/home.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
