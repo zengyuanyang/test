@@ -8,6 +8,21 @@ public class User {
 	private String userSex;
 	private String userAddress;
 	private Date userBirthday;
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userName=" + userName + ", userSex=" + userSex + ", userAddress="
+				+ userAddress + ", userBirthday=" + userBirthday + "]";
+	}
+	public User() {
+		super();
+	}
+	public User(String userName, String userSex, String userAddress, Date userBirthday) {
+		super();
+		this.userName = userName;
+		this.userSex = userSex;
+		this.userAddress = userAddress;
+		this.userBirthday = userBirthday;
+	}
 	public Integer getUserId() {
 		return userId;
 	}
@@ -38,20 +53,5 @@ public class User {
 	public void setUserBirthday(Date userBirthday) {
 		this.userBirthday = userBirthday;
 	}
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", userName=" + userName + ", userSex=" + userSex + ", userAddress="
-				+ userAddress + ", userBirthday=" + userBirthday + "]";
-	}
-	public User(String userName, String userSex, String userAddress, Date userBirthday) {
-		super();
-		this.userName = userName;
-		this.userSex = userSex;
-		this.userAddress = userAddress;
-		this.userBirthday = userBirthday;
-	}
-	public User() {
-		super();
-	}
-	
+
 }

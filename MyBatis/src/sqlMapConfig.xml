@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  SYSTEM "C:\Users\Administrator\Desktop\mybatis-3-config.dtd">
+<configuration>
+	<properties resource="jdbcinfo.properties"></properties>
+	<settings>
+		<!-- 开启懒加载 -->
+		<setting name="lazyLoadingEnabled" value="true"/><!-- 默认值为true -->
+		<setting name="aggressiveLazyLoading" value="false"/><!-- 默认值为true -->
+		
+		<!-- 一级缓存：sqlSession，自动开启，内部为map结构，键值为sql语句，条件，statement等信息
+			二级缓存：同一个namespace下的mapper
+		 -->
+		<!-- 开启二级缓存，必须手动开启 -->
+		<setting name="cacheEnabled" value="true"/>
+	</settings>
+	<typeAliases>
+		<!-- <typeAlias type="com.mine.mybatis.pojo.User" alias="user"/> -->
+		<package name="com.mine.mybatis.pojo"/><!-- 这种方式定义别名，别名为类名首字母小写 -->
+		<package name="com.mine.mybatis.vo"/>
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbcinfo.driver}"/>
+				<property name="url" value="${jdbcinfo.url}"/>
+				<property name="username" value="${jdbcinfo.username}"/>
+				<property name="password" value="${jdbcinfo.password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper class="com.mine.mybatis.mapper.UserMapper"/>
+		<mapper class="com.mine.mybatis.mapper.OrderMapper"/>
+		<!-- <mapper resource="com/mine/mybatis/mapper/UserMapper.xml"/> -->
+		<!-- <mapper url=""/> 绝对路径 -->
+	</mappers>
+</configuration>
