@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="
+	   		http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+	   		http://www.springframework.org/schema/context 
+	   		http://www.springframework.org/schema/context/spring-context.xsd ">
+	<!-- 开启注解 -->
+	<context:annotation-config></context:annotation-config>
+	<!-- 组件扫描器 -->	
+	<context:component-scan base-package="com.mine.spring"></context:component-scan>
+	<!-- 实例化Bean的三种方式 -->
+	<!-- 1.使用构造方法，需提供默认的无参构造方法 -->
+	<!-- <bean id="serviceId" class="com.mine.spring.service.impl.Service" init-method="myInit" destroy-method="myDestroy"></bean> -->
+	<!-- 2.使用静态工厂方法:直接通过工厂类获取 -->
+	<!-- <bean id="service" class="com.mine.spring.factory.BeanFactory" factory-method="createServiceFactory"></bean> -->
+	<!-- 3.使用实例工厂方法:先创建工厂对象，在通过工厂对象创建 -->
+	<!-- <bean id="BeanFactory" class="com.mine.spring.factory.BeanFactory2"></bean>
+	<bean id="service2" factory-bean="BeanFactory" factory-method="createServiceFactory"></bean> -->
+	
+	
+	
+	<!-- 手动方式注入 -->
+	<!-- Setter方法注入 -->
+	<bean id="job" class="com.mine.spring.pojo.Job">
+		<property name="jobName" value="程序员"></property>
+	</bean>
+	<!-- 构造方法注入 -->
+	<bean id="user" class="com.mine.spring.pojo.User">
+		<constructor-arg name="userName" value="zyy"></constructor-arg>
+		<constructor-arg name="userPwd" value="zyy520"></constructor-arg>
+		<constructor-arg name="job" ref="job"></constructor-arg>
+	</bean>
+	<!-- 命名空间注入 -->
+	<bean id = "user2" class="com.mine.spring.pojo.User" p:userName="刀疤哥" p:userPwd="zyy520" p:job-ref="job"></bean>
+	
+	
+	
+	<!-- SeEL表达式
+		<property name="" value="#{表达式}">
+		#{123},#{"tom"}:数字，字符串
+		#{beanId}:引入bean
+		#{beanId.propName}:操作数据
+		#{bean.toString()}:执行方法
+		#{T(类).字段|方法}:静态方法或字段
+	 -->
+	<bean id="user3" class="com.mine.spring.pojo.User">
+		<property name="userName" value="#{T(java.lang.Math).random()*10}"></property>
+		<property name="userPwd" value="zyy520"></property>
+		<property name="job" ref="job"></property>
+	</bean>
+	
+	
+	
+	<!-- 集合注入 
+		普通数据：value
+		引用数据：ref
+	-->
+	<bean id="job2" class="com.mine.spring.pojo.Job" p:jobName="程序员">
+		<!-- list -->
+		<property name="list">
+			<list>
+				<value>测试1</value>
+				<value>测试2</value>
+				<value>测试3</value>
+			</list>
+		</property>
+		<!-- set -->
+		<property name="jobSet">
+			<set>
+				<ref bean="user3"/>
+			</set>
+		</property>
+		<!-- map -->
+		<property name="jobMap">
+			<map>
+				<entry key="测试1" value="1"></entry>
+				<entry key="测试2" value="2"></entry>
+				<entry key="测试3" value="3"></entry>
+			</map>
+		</property>
+		<!-- 数组 -->
+		<property name="arry">
+			<array>
+				<value>测试1</value>
+				<value>测试2</value>
+				<value>测试3</value>
+			</array>
+		</property>
+		<!-- properties -->
+		<property name="properties">
+			<props>
+				<prop key="测试1">1</prop>
+				<prop key="测试2">2</prop>
+				<prop key="测试3">3</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 自动注入需加载的类 -->
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean>
+</beans>

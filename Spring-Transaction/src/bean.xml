@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="
+	   		http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+	   		http://www.springframework.org/schema/context 
+	   		http://www.springframework.org/schema/context/spring-context.xsd 
+	   		http://www.springframework.org/schema/aop 
+	   		http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+	   		http://www.springframework.org/schema/tx 
+	   		http://www.springframework.org/schema/tx/spring-tx-4.2.xsd" >
+	<!-- 开启注解 -->
+	<context:annotation-config></context:annotation-config>
+	<!-- 组件扫描器 -->	
+	<context:component-scan base-package="com.mine.spring"></context:component-scan>
+	<!-- 开启AOP注解 -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+	<!-- 配置C3P0数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/spring"></property>
+		<property name="user" value="zengyuanyang"></property>
+		<property name="password" value="zyy520"></property>
+	</bean>
+	
+	<bean id="userDao" class="com.mine.spring.dao.impl.UserDao">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	
+	
+	
+	<!-- 手动管理事务
+		Spring 底层使用TransactionTemplate事务模板进行操作
+		1.service需要获得TransactionTemplate
+		2.Spring配置模板，并且注入给service
+		3.模板需要注入事务管理器
+		4.配置事务管理器:DataSourceTransactionTemplate需要注入DataSource
+	 -->
+	
+	<bean id="accountService" class="com.mine.spring.service.AccountService">
+		<property name="accountDao" ref="accountDao"></property>
+		<property name="transactionTemplate" ref="transactionTemplate"></property>
+	</bean>
+	<!-- 继承JdbcDaoSupport的类需要引入数据源 -->
+	<bean id="accountDao" class="com.mine.spring.dao.impl.AccountDao">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<!-- 创建事务管理器，事务从connection中获得，因此需要引入DataSource -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<!-- 创建模板 -->
+	<bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager" ref="txManager"></property>
+	</bean>
+	
+	
+	
+	
+	<!-- 半自动管理事务
+		Spring提供事务代理工厂 bean TransactionProxyFactoryBean
+		1.getBean（）获得代理对象
+		2.Spring配置一个代理
+	 -->
+	 <bean id="accountDao2" class="com.mine.spring.dao.impl.AccountDao2">
+	 	<property name="dataSource" ref="dataSource"></property>
+	 </bean>
+	 <bean id="accountService2" class="com.mine.spring.service.AccountService2">
+	 	<property name="accountDao" ref="accountDao2"></property>
+	 </bean>
+	 <bean id="proxyAccountService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	 	<!-- 目标类接口 -->
+	 	<property name="proxyInterfaces" value="com.mine.spring.service.IAccountService"></property>
+	 	<!-- 目标类 -->
+	 	<property name="target" ref="accountService2"></property>
+	 	<!-- 事务管理器 -->
+	 	<property name="transactionManager" ref="txManager"></property>
+	 	<!-- 事务属性
+	 		格式：PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly,-Exception,+Exception
+	 				传播行为                      隔离级别                 是否只读    异常回滚      异常提交
+	 	 -->
+	 	<property name="transactionAttributes">
+	 		<props>
+	 			<prop key="transfer">PROPAGATION_REQUIRED,ISOLATION_DEFAULT</prop>
+	 		</props>
+	 	</property>
+	 </bean>
+	 
+	 
+	 
+	 
+	 <!-- 全自动管理事务：aop配置基于xml 
+	 	在xml中配置AOP自动生成代理，进行事务管理
+	 	1.配置事务管理器
+	 	2.配置事务详情
+	 	3.配置aop
+	 -->
+	 <bean id="accountDao3" class="com.mine.spring.dao.impl.AccountDao3">
+	 	<property name="dataSource" ref="dataSource"></property>
+	 </bean>
+	 <bean id="accountService3" class="com.mine.spring.service.AccountService3">
+	 	<property name="accountDao" ref="accountDao3"></property>
+	 </bean>
+	 <tx:advice id="txAdvice" transaction-manager="txManager">
+	 	<tx:attributes>
+	 		<tx:method name="*" propagation="REQUIRED" isolation="DEFAULT"/>
+	 	</tx:attributes>
+	 </tx:advice>
+	 <aop:config>
+	 	<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.mine.spring.service.AccountService3.*(..))"/>
+	 </aop:config>
+</beans>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  SYSTEM "C:\Users\Administrator\Desktop\mybatis-3-mapper.dtd">
+<mapper namespace="com.mine.mybatis.mapper.UserMapper">
+
+
+	<select id="showALlUser" resultType="user">
+		SELECT * FROM user
+	</select>
+	
+	<!-- parameterType为普通类型 -->
+	<insert id="insertUser" parameterType="user">
+		INSERT INTO user (userName,userSex,userAddress,userBirthday) VALUES (#{userName},#{userSex},#{userAddress},#{userBirthday})
+	</insert>
+	
+	<!-- parameterType为基本类型 -->
+	<select id="selectUserByName" parameterType="java.lang.String" resultType="user">
+		SELECT * FROM user WHERE userName like '%${value}%'
+	</select>
+	
+	
+	<!-- 返回MySQL自增主键
+		SELECT LAST_INSERT_ID() 与 INSERT语句配合使用，在INSERT语句之后执行
+	 -->
+	 <insert id="insertUser2" parameterType="user">
+	 	<!-- 
+	 		keyProperty:user中存放主键的属性名
+	 		order:该SQL语句相对于insert语句的执行顺序
+	 	 -->
+	 	<selectKey keyProperty="userId" resultType="int" order="AFTER">
+	 		SELECT LAST_INSERT_ID()
+	 	</selectKey>
+	 	INSERT INTO user (userName,userSex,userAddress,userBirthday) VALUES (#{userName},#{userSex},#{userAddress},#{userBirthday})
+	 </insert>
+	 
+	 
+	 <!-- parameterType为包装类型VO -->
+	 <select id="selectUsers" parameterType="userVO" resultType="user">
+	 	SELECT * FROM user WHERE userName LIKE '%${user.userName}%'
+	 </select>
+	 
+	 
+	 <!-- parameterType为HashMap类型 -->
+	 <select id="selectUsersMap" parameterType="hashmap" resultType="user">
+	 	SELECT * FROM user WHERE userName LIKE '%${userName}%'
+	 </select>
+	 
+	 <resultMap type="user" id="usermap">
+	 	<!-- 查询结果的唯一标识符 -->
+	 	<!-- <id column="userId" property="userId"/> -->
+	 	<!-- 结果映射 column：列名 property：属性名
+	 		若列名和属性名相同自动映射，不同则需要手动映射
+	 	 -->
+	 	<result column="name" property="userName"/>
+	 </resultMap>
+	 <select id="selectUserToMap" parameterType="int" resultMap="usermap">
+	 	SELECT userId as id,userName as name,userSex as sex FROM user WHERE userId = #{userId}
+	 </select>
+	 
+	 <!-- 动态SQL语句 -->
+	 
+	 <!-- if and where -->
+	 <select id="selectUserIf" parameterType="user" resultType="user">
+	 	SELECT * FROM user 
+	 	<where>
+	 		<if test="userName != null and userName != ''"><!-- where后的第一个and会被自动去掉 -->
+	 			AND userName = #{userName}
+	 		</if>
+	 		<if test="userId != null and userId != 0">
+	 			AND userId = #{userId}
+	 		</if>
+	 	</where>
+	 </select>
+	 
+	 
+	 <!-- sql片段 -->
+	 <sql id="sqltest">
+	 	<if test="userName != null and userName != ''"><!-- where后的第一个and会被自动去掉 -->
+	 		AND userName = #{userName}
+	 	</if>
+	 	<if test="userId != null and userId != 0">
+	 		AND userId = #{userId}
+	 	</if>
+	 </sql>
+	 <select id="selectUserSql" parameterType="user" resultType="user">
+	 	SELECT * FROM user 
+	 	<where>
+	 		<include refid="sqltest"></include>
+	 	</where>
+	 </select>
+	 
+	 <!-- foreach -->
+	 <select id="selectUserForeach" parameterType="list" resultType="user">
+	 	SELECT * FROM user 
+	 	<where>
+	 		<if test="list != null and list.size != 0">
+	 			<!-- 
+	 				collection:集合参数名，若入参类型为集合，那么只能写list，如入参类型为普通类，则填写类中集合属性的名称
+	 				item：集合中每一项所保存的变量名
+	 				open：拼接字符串的开始
+	 				close：拼接字符串的结束
+	 				separator：遍历出的每一项的分隔符
+	 			 -->
+	 			<foreach collection="list" item="userId" open="AND userId in(" close=")" separator=",">
+	 				#{userId}
+	 			</foreach>
+	 		</if>
+	 	</where>
+	 </select>
+</mapper>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="
+	   		http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+	   		http://www.springframework.org/schema/context 
+	   		http://www.springframework.org/schema/context/spring-context.xsd 
+	   		http://www.springframework.org/schema/aop 
+	   		http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+	<!-- 开启注解 -->
+	<context:annotation-config></context:annotation-config>
+	<!-- 组件扫描器 -->	
+	<context:component-scan base-package="com.mine.spring"></context:component-scan>
+	<!-- 开启AOP注解 -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+	<!-- aop联盟，半自动 -->
+	<bean id="proxyFactory" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<!-- 注入目标类，在ProxyFactoryBean类中目标类的属性名为target -->
+		<property name="target" ref="target"></property>
+		<!-- 注入切面类，在ProxyFactoryBean类中切面类的属性名为interceptorNames
+			interceptor类型为String[]，设置值时若只有一个值直接用value设置，多个值嵌套<array>标签设置
+		 	optimize属性：是否强制使用字节码增强,true为强制
+		 	<property name="optimize" value="true"/>
+		 	没设置时，有接口默认jdk动态代理，没接口默认字节码增强
+		 -->
+		<property name="interceptorNames" value="aspect"></property>
+	</bean>
+	
+	
+	<!-- aop全自动编程 
+		proxy-target-class:是否强制是有CGLIB字节码增强
+	-->
+	<aop:config proxy-target-class="false">
+		<!-- 切点
+			表达式：execution(* com.mine.spring.target.Target2.*(..))
+					修饰符	返回值类型       包                                类    方法 参数
+		 -->
+		<aop:pointcut expression="execution(* com.mine.spring.target.Target2.*(..))" id="myPointcut"/>
+		<!-- 切面
+			引入切面和切点
+		 -->
+		<aop:advisor advice-ref="aspect" pointcut-ref="myPointcut"/>
+	</aop:config>
+	
+	<!-- AspectJ框架 -->
+	<aop:config>
+		<!-- 声明切面 -->
+		<aop:aspect ref="aspect2">
+			<!-- 声明切点 -->
+			<aop:pointcut expression="execution(* com.mine.spring.target.Target3.*(..))" id="myPointCut"/>
+			<!-- 前置通知 -->
+			<aop:before method="befor" pointcut-ref="myPointCut"/>
+			<!-- 后置通知：returning的值必须和切面中后置方法中的参数名相同 -->
+			<aop:after-returning method="after" pointcut-ref="myPointCut" returning="ret"/>
+			<!-- 环绕通知 -->
+			<aop:around method="round" pointcut-ref="myPointCut"/>
+			<!-- 异常通知，throwing的值必须和切面中异常方法中的参数名相同 -->
+			<aop:after-throwing method="thowing" pointcut-ref="myPointCut" throwing="e"/>
+			<!-- 最终 -->
+			<aop:after method="myFinal" pointcut-ref="myPointCut"/>
+		</aop:aspect>
+	</aop:config>
+</beans>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  SYSTEM "C:\Users\Administrator\Desktop\mybatis-3-mapper.dtd">
+<mapper namespace="com.mine.mybatis.mapper.OrderMapper">
+	<resultMap type="orders" id="onetoone">
+		<result column="orderName" property="orderName"/>
+		<result column="orderNote" property="orderNote"/>
+		<!-- 一对一映射使用标签association
+			property:实体类中映射对象的属性名
+			JavaType:映射对象的Java类型
+		 -->
+		<association property="user" javaType="user">
+			<result column="userId" property="userId"/>
+			<result column="userName" property="userName"/>
+		</association>
+		<!-- 一对多映射使用<collection property="" ofType=""></collection>标签  ofTyepe:集合的泛型类型-->
+		<!-- 延迟加载/懒加载 ：先加载主信息，在需要的时候，再去加载从信息
+			association和collection标签具有延迟加载的功能，但需要在mybatis的全局配置文件中配置settings
+		-->
+	</resultMap>
+	<select id="showAllOrders" resultMap="onetoone">
+		SELECT `user`.`userId`,`user`.`userName`,`order`.`orderName`,`order`.`orderNote` 
+		FROM `user`,`order` 
+		WHERE `user`.`userId` = `order`.`userId`
+	</select>
+</mapper>
